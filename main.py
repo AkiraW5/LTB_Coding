@@ -2,27 +2,50 @@
 
 from ast import Store
 from operator import rshift
+import subprocess
+import os
 
-a = "| Howdy Folks! Welcome to LDU! |"
-print(len(a))
-print(a.center(300))
+width = os.get_terminal_size().columns
 
-print("================================")
-print("\n            Now, what you wanna do?")
-print("\n 1- Show the store ", "2- Want to suggest us something?",
-      "3- Custom downloader(BETA)")
-print("\n 4- Look our Github page!", "5- What's LDU?", "6- Let me out! (quit)")
+print("================================".center(width))
+print("| Howdy Folks! Welcome to LTB! |".center(width))
+print("================================".center(width))
+print("Now, what you wanna do?".center(width))
+print("1- Let's use LTB!".center(width))
+print("3- Downloader (BETA)".center(width))
+print("4- Look our Github page!".center(width))
+print("5- What's LTB?".center(width))
+print("6- Let me out! (quit)".center(width))
 
-Option_Selector = input("")
+slt = int(input(':'.center(width)))
+print("\033[;5;32;40m Bright Green  \n")
 
-print(Option_Selector == True)
+if slt == 1:
+    print("====================================================".center(width))
+    print("|                 LTB Options list                 |".center(width))
+    print("====================================================".center(width))
 
-if Option_Selector == "1" == True:
+elif slt == 2:
+    print("====================================================".center(width))
+    print("|            Oh, so you have an suggestion?        |".center(width))
+    print("====================================================".centerwidth)
+    print("Nice to hear! Sadly, Due to lack of experience, we".center(width))
+    print("can't add this now! But you can contact us in TG!".center(width))
+    print("@krebox @akirawa1")
+    print("")
+
+elif slt == 3:
     print("====================================================")
-    print("Application", "Arch", "Version", "Repository", "Size")
+    print("|           Not avaliable yet! We're Sorry!        |")
     print("====================================================")
+    print("")
 
-elif Option_Selector == "2" == True:
-    print("==================================")
-    print("| Oh, so you have an suggestion? |")
-    print("==================================")
+elif slt == 4:
+    print("====================================================")
+    print("|            Hmm... Where did you get this?        |")
+    print("====================================================")
+    print("| Anyways, there you go! |")
+    print("| https://github.com/AkiraW5/LTB_Coding |")
+
+elif slt == 6:
+    quit
