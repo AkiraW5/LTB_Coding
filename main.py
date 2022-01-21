@@ -6,6 +6,7 @@ import subprocess
 import os
 
 width = os.get_terminal_size().columns
+print("\033[31;m Bright Green  \n")
 
 print("================================".center(width))
 print("| Howdy Folks! Welcome to LTB! |".center(width))
@@ -18,7 +19,6 @@ print("5- What's LTB?".center(width))
 print("6- Let me out! (quit)".center(width))
 
 slt = int(input(':'.center(width)))
-print("\033[;5;31:0m Bright Green  \n")
 
 if slt == 1:
     print("====================================================".center(width))
