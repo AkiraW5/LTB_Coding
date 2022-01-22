@@ -5,6 +5,8 @@ from operator import rshift
 import os
 import colorama
 from colorama import Fore, Back, Style
+import platform
+import getpass
 
 colorama.init(autoreset=True)
 os.system("pip install colorama")
@@ -18,6 +20,17 @@ C = Fore.BLUE + Back.BLACK
 C1 = Fore.GREEN + Back.BLACK
 
 width = os.get_terminal_size().columns
+
+texto = 'test'
+
+version = platform.version()
+release = platform.release()
+machine = platform.machine()
+username = getpass.getuser()
+
+print(
+    C +
+    f'{"=" * width}\n{release:<20}{machine:^20}{username:>20}\n{"=" * width}')
 
 print(C + "================================".center(width))
 print(C + "| Howdy Folks! Welcome to LTB! |".center(width))
@@ -40,6 +53,16 @@ if slt == 1:
           "|                 LTB Options list                 |".center(width))
     print(C1 +
           "====================================================".center(width))
+
+    print(C1 +
+          "- - - - - - - - - - - - - - - - - - - - - - - - - - - -".center(
+              width))
+    print(C1 + "|[0] Back To Menu|".center(width))
+    print(C1 +
+          "- - - - - - - - - - - - - - - - - - - - - - - - - - - -".center(
+              width))
+
+    slt = int(input(Fore.YELLOW + Back.BLACK + 'Type Option: '))
 
 elif slt == 2:
     subprocess.run('clear')
