@@ -18,8 +18,6 @@ Back: BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE, RESET.
 Style: DIM, NORMAL, BRIGHT, RESET_ALL
 '''
 
-subprocess.run('clear')
-
 RELEASE_DATA = {}
 with open("/etc/os-release") as f:
     reader = csv.reader(f, delimiter="=")
@@ -54,6 +52,7 @@ UserInf2 = Back.BLACK + 'YOUR CURRENT SO: ' + Fore.GREEN + RELEASE_DATA[
 
 opcao = 0
 while opcao != 6:
+    subprocess.run('clear')
     print(Back.BLACK + Fore.WHITE + '=' * width)
     print(UserInf.ljust(width))
     print(UserInf2)
