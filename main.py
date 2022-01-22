@@ -27,6 +27,7 @@ version = platform.version()
 release = platform.release()
 machine = platform.machine()
 username = getpass.getuser()
+abacate = "teste"
 
 print(
     C +
