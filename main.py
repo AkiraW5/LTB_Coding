@@ -7,6 +7,8 @@ import colorama
 from colorama import Fore, Back, Style
 import platform
 import getpass
+import socket
+import csv
 
 colorama.init(autoreset=True)
 os.system("pip install colorama")
@@ -21,17 +23,37 @@ C1 = Fore.GREEN + Back.BLACK
 
 width = os.get_terminal_size().columns
 
-texto = 'test'
+RELEASE_DATA = {}
+with open("/etc/os-release") as f:
+    reader = csv.reader(f, delimiter="=")
+    for row in reader:
+        if row:
+            RELEASE_DATA[row[0]] = row[1]
+if RELEASE_DATA["ID"] in ["debian", "raspbian"]:
+    with open("/etc/debian_version") as f:
+        DEBIAN_VERSION = f.readline().strip()
+    major_version = DEBIAN_VERSION.split(".")[0]
+    version_split = RELEASE_DATA["VERSION"].split(" ", maxsplit=1)
+    if version_split[0] == major_version:
+        # Just major version shown, replace it with the full version
+        RELEASE_DATA["VERSION"] = " ".join([DEBIAN_VERSION] +
+                                           version_split[1:])
 
 version = platform.version()
 release = platform.release()
 machine = platform.machine()
-username = getpass.getuser()
-abacate = "teste"
+GetUser = getpass.getuser()
+UserInf = Back.BLACK + 'LINUX TOOLBOX' + Fore.BLUE + ' 0.1 ' + Fore.WHITE + ' | ' + Fore.BLUE + machine + Fore.WHITE + ' | ' + 'USER: ' + Fore.YELLOW + GetUser.upper(
+) + Fore.WHITE + ' | '
+UserInf2 = Back.BLACK + 'YOUR CURRENT SO: ' + Fore.GREEN + RELEASE_DATA[
+    "NAME"] + Fore.WHITE + ' | ' + 'VERSION: ' + Fore.GREEN + RELEASE_DATA[
+        "VERSION"] + Fore.WHITE + ' | '
+print(Back.BLACK + '=' * width)
+print(UserInf.ljust(width))
+print(UserInf2)
+print(Back.BLACK + '=' * width)
 
-print(
-    C +
-    f'{"=" * width}\n{release:<20}{machine:^20}{username:>20}\n{"=" * width}')
+print(C + f'{machine.ljust(width)}')
 
 print(C + "================================".center(width))
 print(C + "| Howdy Folks! Welcome to LTB! |".center(width))
@@ -63,7 +85,7 @@ if slt == 1:
           "- - - - - - - - - - - - - - - - - - - - - - - - - - - -".center(
               width))
 
-    slt = int(input(Fore.YELLOW + Back.BLACK + 'Type Option: '))
+    slt1 = int(input(Fore.YELLOW + Back.BLACK + 'Type Option: '))
 
 elif slt == 2:
     subprocess.run('clear')
