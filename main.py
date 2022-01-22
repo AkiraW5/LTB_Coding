@@ -32,6 +32,7 @@ print(C + "6- Let me out! (quit)".center(width))
 slt = int(input(Fore.YELLOW + Back.BLACK + 'Type Option: '))
 
 if slt == 1:
+    subprocess.run('clear')
     print(C1 +
           "====================================================".center(width))
     print(C1 +
@@ -40,6 +41,7 @@ if slt == 1:
           "====================================================".center(width))
 
 elif slt == 2:
+    subprocess.run('clear')
     print(C1 +
           "====================================================".center(width))
     print(C1 +
@@ -50,10 +52,11 @@ elif slt == 2:
           "Nice to hear! Sadly, Due to lack of experience, we".center(width))
     print(C1 +
           "can't add this now! But you can contact us in TG!".center(width))
-    print(C1 + "@krebox @akirawa1")
+    print(C1 + "@krebox @akirawa1".center(width))
     print("")
 
 elif slt == 3:
+    subprocess.run('clear')
     print(C1 +
           "====================================================".center(width))
     print(C1 +
@@ -63,6 +66,7 @@ elif slt == 3:
     print("")
 
 elif slt == 4:
+    subprocess.run('clear')
     print(C1 +
           "====================================================".center(width))
     print(C1 +
