@@ -18,7 +18,6 @@ C = Fore.BLUE + Back.BLACK
 C1 = Fore.GREEN + Back.BLACK
 
 width = os.get_terminal_size().columns
-print("\033[0;0m Bright Green  \n")
 
 print(C + "================================".center(width))
 print(C + "| Howdy Folks! Welcome to LTB! |".center(width))
@@ -55,17 +54,23 @@ elif slt == 2:
     print("")
 
 elif slt == 3:
-    print(C1 + "====================================================")
-    print(C1 + "|           Not avaliable yet! We're Sorry!        |")
-    print(C1 + "====================================================")
+    print(C1 +
+          "====================================================".center(width))
+    print(C1 +
+          "|           Not avaliable yet! We're Sorry!        |".center(width))
+    print(C1 +
+          "====================================================".center(width))
     print("")
 
 elif slt == 4:
-    print(C1 + "====================================================")
-    print(C1 + "|            Hmm... Where did you get this?        |")
-    print(C1 + "====================================================")
-    print(C1 + "| Anyways, there you go! |")
-    print(C1 + "| https://github.com/AkiraW5/LTB_Coding |")
+    print(C1 +
+          "====================================================".center(width))
+    print(C1 +
+          "|            Hmm... Where did you get this?        |".center(width))
+    print(C1 +
+          "====================================================".center(width))
+    print(C1 + "| Anyways, there you go! |".center(width))
+    print(C1 + "| https://github.com/AkiraW5/LTB_Coding |".center(width))
 
 elif slt == 6:
     quit
