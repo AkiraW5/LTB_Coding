@@ -43,12 +43,11 @@ version = platform.version()
 release = platform.release()
 machine = platform.machine()
 GetUser = getpass.getuser()
-GetArch = os.system('getconf LONG_BIT')
 UserInf = Back.BLACK + 'LINUX TOOLBOX' + Fore.BLUE + ' 0.1 ' + Fore.WHITE + ' | ' + Fore.BLUE + machine + Fore.WHITE + ' | ' + 'USER: ' + Fore.YELLOW + GetUser.upper(
 ) + Fore.WHITE + ' | '
 UserInf2 = Back.BLACK + 'YOUR CURRENT SO: ' + Fore.GREEN + RELEASE_DATA[
     "NAME"] + Fore.WHITE + ' | ' + 'VERSION: ' + Fore.GREEN + RELEASE_DATA[
-        "VERSION"] + Fore.WHITE + ' | ', GetArch
+        "VERSION"] + Fore.WHITE + ' | '
 
 opcao = 0
 while opcao != 6:
