@@ -1,12 +1,21 @@
 # Made by Kitten Team in Brazil :)
-
+import subprocess
 from ast import Store
 from operator import rshift
-import subprocess
 import os
+import colorama
+from colorama import Fore, Back, Style
+
+colorama.init(autoreset=True)
+os.system("pip install colorama")
+
+print('\033[31m' + 'some red text')
+print('\033[39m')
+print()
+print(f"{Fore.RED}Red Text")
 
 width = os.get_terminal_size().columns
-print("\033[31;m Bright Green  \n")
+print("\033[0;0m Bright Green  \n")
 
 print("================================".center(width))
 print("| Howdy Folks! Welcome to LTB! |".center(width))
