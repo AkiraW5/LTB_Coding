@@ -8,11 +8,17 @@ from colorama import Fore, Back, Style
 
 colorama.init(autoreset=True)
 os.system("pip install colorama")
+'''
+Fore: BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE, RESET.
+Back: BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE, RESET.
+Style: DIM, NORMAL, BRIGHT, RESET_ALL
+'''
 
-print('\033[31m' + 'some red text')
-print('\033[39m')
-print()
-print(f"{Fore.RED}Red Text")
+print(f"{Fore.BLUE}Red Text")
+print(Fore.RED + 'test')
+print(Back.CYAN + 'test')
+print(Style.BRIGHT + 'test')
+print(Fore.RED + Back.GREEN + 'red text on green background')
 
 width = os.get_terminal_size().columns
 print("\033[0;0m Bright Green  \n")
