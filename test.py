@@ -52,7 +52,6 @@ UserInf2 = Back.BLACK + 'YOUR CURRENT SO: ' + Fore.GREEN + RELEASE_DATA[
 
 opcao = 0
 while opcao != 6:
-    subprocess.run('clear')
     print(Back.BLACK + Fore.WHITE + '=' * width)
     print(UserInf.ljust(width))
     print(UserInf2)
