@@ -142,7 +142,7 @@ def menu(opcao):
 
         elif opcao == '6':
             quit
-
+        print('dasdsa')
         elif opcao < '0':
             subprocess.run('clear')
             txt = 'ERROR: YOU NEED SELECT SOME OPTION'
