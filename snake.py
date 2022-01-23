@@ -1,12 +1,11 @@
+import os
+
+os.system("pip install pygame")
+
 import pygame
 import sys
 import time
 import random
-import os
-
-os.environ["SDL_VIDEODRIVER"] = "dummy"
-
-os.system("pip install pygame")
 
 speed = 15
 
