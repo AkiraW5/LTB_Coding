@@ -84,9 +84,10 @@ while True:
             elif (event.key == pygame.K_LEFT
                   or event.key == ord("a") and direction != "RIGHT"):
                 direction = "LEFT"
-            elif (event.key == pygame.K_RIGHT
-                  or event.key == ord("d") and direction != "LEFT"):
+            elif (event.key == pygame.K_UP
+                  or event.key == ord("D") and direction != "LEFT"):
                 direction = "RIGHT"
+
     if direction == "UP":
         head_pos[1] -= square_size
     elif direction == "DOWN":
