@@ -10,31 +10,35 @@ import getpass
 import socket
 import csv
 
-colorama.init(autoreset=True)
-os.system("pip install colorama")
-'''
-Fore: BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE, RESET.
-Back: BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE, RESET.
-Style: DIM, NORMAL, BRIGHT, RESET_ALL
-'''
+print('test')
 
-C = Fore.BLUE + Back.BLACK
-C1 = Fore.GREEN + Back.BLACK
+colorama.init(
+    autoreset=True)  #initialize the colorama module and enable the autoreset
+os.system("pip install colorama"
+          )  #install colorama module as long as your don't have it
 
-width = os.get_terminal_size().columns
+# Fore: BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE, RESET. = all possible colors for the letters
+# Back: BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE, RESET. = all possible colors to the background
+# Style: DIM, NORMAL, BRIGHT, RESET_ALL = all possible styles for the letters
 
-version = platform.version()
-release = platform.release()
-machine = platform.machine()
-GetUser = getpass.getuser()
+C = Fore.BLUE + Back.BLACK  #uses color combination: black for the background and blue to the letters
+C1 = Fore.GREEN + Back.BLACK  #uses color combination: black for the background and green to the letters
+
+width = os.get_terminal_size().columns  #get the size of your terminal
+
+version = platform.version()  #get your system version
+release = platform.release()  #get your system name
+machine = platform.machine()  #get arch do your machine
+GetUser = getpass.getuser()  #get your username
 UserInf = Back.BLACK + 'LINUX TOOLBOX' + Fore.BLUE + ' 0.1 ' + Fore.WHITE + ' | ' + Fore.BLUE + machine + Fore.WHITE + ' | ' + 'USER: ' + Fore.YELLOW + GetUser.upper(
 ) + Fore.WHITE + ' | '
 UserInf2 = Back.BLACK + 'YOUR CURRENT SO: ' + Fore.GREEN + release + Fore.WHITE + ' | ' + 'VERSION: ' + Fore.GREEN + version + Fore.WHITE + ' | '
+# UserInf and UserInf2 set the informations assigned above
 
-opcao = 0
+option = 0  #s Set empty value for option
 
 
-def Use_ltb(opcao):
+def Use_ltb(option):
 
     subprocess.run('clear')
     print(C1 +
@@ -48,9 +52,9 @@ def Use_ltb(opcao):
     print(Back.BLACK + Fore.RED + '0- ' + Fore.GREEN + 'Back to menu')
     print(Back.BLACK + '-' * width)
 
-    opcao1 = input(Fore.YELLOW + Back.BLACK + 'Type option: ')
+    option1 = input(Fore.YELLOW + Back.BLACK + 'Type option: ')
 
-    while opcao1 != '0':
+    while option1 != '0':
 
         if opcao1 == '0':
             menu(opcao1)
@@ -78,7 +82,10 @@ def Use_ltb(opcao):
         break
 
 
-def Suggest(opcao):
+# Use ltb is the equivalent to the first menu option
+
+
+def Suggest(option):
     subprocess.run('clear')
     print(C1 +
           "====================================================".center(width))
@@ -96,14 +103,14 @@ def Suggest(opcao):
     print(Back.BLACK + Fore.RED + '0- ' + Fore.GREEN + 'Back to menu')
     print(Back.BLACK + '-' * width)
 
-    opcao1 = input(Fore.YELLOW + Back.BLACK + 'Type option: ')
+    option1 = input(Fore.YELLOW + Back.BLACK + 'Type option: ')
 
-    while opcao1 != '0':
+    while option1 != '0':
 
-        if opcao1 == '0':
-            menu(opcao1)
+        if option == '0':
+            menu(option1)
 
-        elif opcao1 < '0':
+        elif option1 < '0':
             subprocess.run('clear')
             txt = 'ERROR: YOU NEED SELECT SOME OPTION'
             print(Back.BLACK + Fore.RED + '=' * width)
@@ -111,7 +118,7 @@ def Suggest(opcao):
             print(Back.BLACK + Fore.RED + '=' * width)
             ctn = input(Fore.YELLOW + Back.BLACK +
                         'Type anything to continue: ')
-            Suggest(opcao1)
+            Suggest(option1)
 
         else:
             subprocess.run('clear')
@@ -121,12 +128,15 @@ def Suggest(opcao):
             print(Back.BLACK + Fore.RED + '=' * width)
             ctn = input(Fore.YELLOW + Back.BLACK +
                         'Type anything to continue: ')
-            Suggest(opcao1)
+            Suggest(option1)
 
         break
 
 
-def Downloader(opcao):
+# Suggest is the equivalent to the second menu option
+
+
+def Downloader(option):
     subprocess.run('clear')
     print(C1 +
           "====================================================".center(width))
@@ -139,14 +149,14 @@ def Downloader(opcao):
     print(Back.BLACK + Fore.RED + '0- ' + Fore.GREEN + 'Back to menu')
     print(Back.BLACK + '-' * width)
 
-    opcao1 = input(Fore.YELLOW + Back.BLACK + 'Type option: ')
+    option1 = input(Fore.YELLOW + Back.BLACK + 'Type option: ')
 
-    while opcao1 != '0':
+    while option1 != '0':
 
-        if opcao1 == '0':
-            menu(opcao1)
+        if option1 == '0':
+            menu(option1)
 
-        elif opcao1 < '0':
+        elif option1 < '0':
             subprocess.run('clear')
             txt = 'ERROR: YOU NEED SELECT SOME OPTION'
             print(Back.BLACK + Fore.RED + '=' * width)
@@ -154,7 +164,7 @@ def Downloader(opcao):
             print(Back.BLACK + Fore.RED + '=' * width)
             ctn = input(Fore.YELLOW + Back.BLACK +
                         'Type anything to continue: ')
-            Downloader(opcao1)
+            Downloader(option1)
 
         else:
             subprocess.run('clear')
@@ -164,12 +174,15 @@ def Downloader(opcao):
             print(Back.BLACK + Fore.RED + '=' * width)
             ctn = input(Fore.YELLOW + Back.BLACK +
                         'Type anything to continue: ')
-            Downloader(opcao1)
+            Downloader(option1)
 
         break
 
 
-def GitHub_Page(opcao):
+# Downloader is the equivalent to the third menu option
+
+
+def GitHub_Page(option):
     subprocess.run('clear')
     print(C1 +
           "====================================================".center(width))
@@ -184,14 +197,14 @@ def GitHub_Page(opcao):
     print(Back.BLACK + Fore.RED + '0- ' + Fore.GREEN + 'Back to menu')
     print(Back.BLACK + '-' * width)
 
-    opcao1 = input(Fore.YELLOW + Back.BLACK + 'Type option: ')
+    option1 = input(Fore.YELLOW + Back.BLACK + 'Type option: ')
 
-    while opcao1 != '0':
+    while option1 != '0':
 
-        if opcao1 == '0':
-            menu(opcao1)
+        if option1 == '0':
+            menu(option1)
 
-        elif opcao1 < '0':
+        elif option1 < '0':
             subprocess.run('clear')
             txt = 'ERROR: YOU NEED SELECT SOME OPTION'
             print(Back.BLACK + Fore.RED + '=' * width)
@@ -199,7 +212,7 @@ def GitHub_Page(opcao):
             print(Back.BLACK + Fore.RED + '=' * width)
             ctn = input(Fore.YELLOW + Back.BLACK +
                         'Type anything to continue: ')
-            GitHub_Page(opcao1)
+            GitHub_Page(option1)
 
         else:
             subprocess.run('clear')
@@ -209,9 +222,12 @@ def GitHub_Page(opcao):
             print(Back.BLACK + Fore.RED + '=' * width)
             ctn = input(Fore.YELLOW + Back.BLACK +
                         'Type anything to continue: ')
-            GitHub_Page(opcao1)
+            GitHub_Page(option1)
 
         break
+
+
+# GitHub Page is the equivalent to the forth menu option
 
 
 def size_box(msg):
@@ -221,8 +237,11 @@ def size_box(msg):
     print('=' * tam)
 
 
-def menu(opcao):
-    while opcao != '6':
+# Size box automatically creates a size box depending on the text
+
+
+def menu(option):
+    while option != '6':
         subprocess.run('clear')
         print(Back.BLACK + Fore.WHITE + '=' * width)
         print(UserInf.ljust(width))
@@ -238,28 +257,28 @@ def menu(opcao):
         print(C + "4- Look our Github page!".center(width))
         print(C + "5- What's LTB?".center(width))
         print(C + "6- Let me out! (quit)".center(width))
-        opcao = input(Fore.YELLOW + Back.BLACK + 'Type option: ')
+        option = input(Fore.YELLOW + Back.BLACK + 'Type option: ')
 
-        if opcao == '1':
-            Use_ltb(opcao)
+        if option == '1':
+            Use_ltb(option)
 
-        elif opcao == '2':
-            Suggest(opcao)
+        elif option == '2':
+            Suggest(option)
 
-        elif opcao == '3':
-            Downloader(opcao)
+        elif option == '3':
+            Downloader(option)
 
-        elif opcao == '4':
-            GitHub_Page(opcao)
+        elif option == '4':
+            GitHub_Page(option)
 
-        elif opcao == '5':
+        elif option == '5':
             print('5')
             break
 
-        elif opcao == '6':
+        elif option == '6':
             quit
 
-        elif opcao < '0':
+        elif option < '0':
             subprocess.run('clear')
             txt = 'ERROR: YOU NEED SELECT SOME OPTION'
             print(Back.BLACK + Fore.RED + '=' * width)
@@ -278,4 +297,6 @@ def menu(opcao):
                         'Type anything to continue: ')
 
 
-menu(opcao)
+# The menu function create the main menu using the above functions
+
+menu(option)
