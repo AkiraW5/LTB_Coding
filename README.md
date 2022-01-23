@@ -8,7 +8,7 @@ meant to be fast, reliable, and easy to use!
 
 So, you want an example? OK, there we go...  
 Imagine this scenario, your distro isn't booting anymore,
-everything you want is reach desktop again, right?, LTU can help you
+everything you want is reach desktop again, right?, LTB can help you
 with this, and a lot more!
 
 
